@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090911">
+  <meta name="description" content="VIGIL-AC — Player Security Client. Transparent, consent-based PC check sessions.">
+  <title>VIGIL-AC — Player Security Client</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090911;
+      --panel: #11111d;
+      --purple: #a78bfa;
+      --muted: #aaa8bd;
+      --line: #29273b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: #f8f7ff;
+      background:
+        radial-gradient(ellipse at 50% -15%, #7040c844, transparent 55%),
+        var(--bg);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo-mark { color: var(--purple); }
+
+    .nav {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .nav:hover { color: white; }
+
+    .hero {
+      padding: 100px 0 85px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 13px;
+      border: 1px solid #55417f;
+      border-radius: 30px;
+      color: #d1c1ff;
+      background: #171124;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    h1 {
+      margin: 26px 0 20px;
+      font-size: clamp(44px, 8vw, 78px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+    }
+
+    h1 span {
+      color: var(--purple);
+      text-shadow: 0 0 45px #9b6bff35;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin: 32px 0 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: var(--purple);
+    }
+
+    .primary {
+      border-color: transparent;
+      background: linear-gradient(120deg, #7948e8, #a16aff);
+      color: white;
+      box-shadow: 0 8px 35px #814cf52a;
+    }
+
+    .secondary { background: #151421; }
+
+    .meta {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .section-title {
+      margin-bottom: 24px;
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: -1px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding: 10px 0 75px;
+    }
+
+    .card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: linear-gradient(145deg, #151421, #0e0e17);
+    }
+
+    .number {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    h2 { font-size: 18px; }
+
+    .card p, .privacy p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .privacy {
+      margin-bottom: 70px;
+      padding: 27px;
+      border: 1px solid #443263;
+      border-radius: 15px;
+      background: #171123;
+    }
+
+    .privacy h2 { margin-top: 0; }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer a { color: #c4b5fd; }
+
+    @media (max-width: 700px) {
+      .hero { padding: 75px 0 60px; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1.5px; }
+      header { min-height: 68px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container">
+    <a class="logo" href="#" style="text-decoration:none">
+      <span class="logo-mark">V</span> VIGIL-AC
+    </a>
+    <a class="nav" href="#privacy">PRIVACY &amp; SECURITY</a>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="eyebrow">PLAYER SECURITY CLIENT · BETA</div>
+
+      <h1>Security with<br><span>transparency.</span></h1>
+
+      <p class="intro">
+        Connect to an authorized PC check session using the
+        six-digit PIN provided by your server staff.
+        Your consent matters.
+      </p>
+
+      <div class="actions">
+        <a class="button primary"
+           href="https://github.com/yasser16dev/vigil-ac-api/releases/download/1.0.0/VIGIL-AC.Scanner.exe">
+          Download for Windows &#8595;
+        </a>
+
+        <a class="button secondary"
+           href="https://github.com/yasser16dev/vigil-ac-api/releases/latest">
+          View release details
+        </a>
+      </div>
+
+      <p class="meta">
+        Windows · Version 1.0.0 · Beta · Hosted on GitHub
+      </p>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">Built around player control.</h2>
+
+      <div class="grid">
+        <article class="card">
+          <div class="number">01 / VERIFICATION</div>
+          <h2>Secure session PIN</h2>
+          <p>
+            Enter the six-digit PIN provided by authorized server staff
+            to verify your PC check session.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">02 / CONSENT</div>
+          <h2>Your choice matters</h2>
+          <p>
+            Review the information shown in the scanner and make
+            your consent decision before submitting a report.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">03 / TRANSPARENCY</div>
+          <h2>Basic system metadata</h2>
+          <p>
+            Reports contain basic system information. This metadata
+            alone is not proof of cheating.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container privacy" id="privacy">
+      <h2>Privacy comes first.</h2>
+      <p>
+        VIGIL-AC is designed for disclosed, consent-based PC checks.
+        The scanner must explain what information is submitted before
+        the player agrees. It does not request passwords or private
+        documents. Do not submit a report unless you understand and
+        agree to the disclosed collection.
+      </p>
+      <a href="https://github.com/yasser16dev/vigil-ac-api"
+         class="nav">View the project repository &#8594;</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      VIGIL-AC &copy; 2026 · PLAYER CONTROL · SECURE SESSION
+      <br><br>
+      <a href="https://github.com/yasser16dev/vigil-ac-api/releases/latest">
+        Official releases
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
